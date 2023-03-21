@@ -1,0 +1,175 @@
+package day10;
+
+public class 클래스04 {
+
+	public static void main(String[] args) {
+		//Car클래스 객체를 사용할 메인
+
+		
+		Car c1 = new Car();
+		c1.getColor();
+		
+		
+		
+		
+		
+	}
+
+}
+
+class Car{
+	//멤버변수 : color, door, airback, power, speed
+	
+	private String color;
+	private int door;
+	private boolean airback;	// 있다/없다
+	private boolean power; // 출력제외-메서드에 출력O
+	private int speed;     // 출력제외-메서드에 출력O
+	
+	
+	//생성자 : 빈생성자, color만 넣는 생성자, (color,door), (color,door,airback), 전체 생성자
+	
+	
+	public Car() {
+		this.color="red";
+		this.door=4;
+		this.power=false;
+		this.airback=true;		
+	}
+	
+	
+	
+	
+	public Car(String color) {
+		this.color=color;
+	}
+	
+	public Car(String color, int door) {
+		this.color=color;
+		this.door=door;		
+	}
+	
+	public Car(String color, int door,boolean airback) {
+		this.color=color;
+		this.door=door;	
+		this.airback=airback;
+	}
+	
+	public Car(String color, int door,boolean airback,boolean power,int speed) {
+		this.color=color;
+		this.door=door;	
+		this.airback=airback;
+		this.power=power;
+		this.speed=speed;
+	}
+	
+	
+	
+	
+	//method : print, powerOn, powerOff, speedUp, speedDown
+	
+	
+	public void print() {
+		System.out.println("color : "+color);
+		System.out.println("door : "+door);
+		System.out.println("airback : "+airback);		
+	}	
+	
+	
+	public void powerOn() {
+		System.out.println("시동 ON");
+		power = true;
+	}
+
+	public void powerOff() { 
+		System.out.println("시동 OFF");
+		power = false;
+	}
+
+	
+	public void speedUP() {
+	
+		if(power) {
+			speed = speed+10;
+			System.out.println("speed : " + speed);
+		} else {
+			System.out.println("시동이 꺼졌습니다. 시동을 켜주세요.");
+		}
+	}
+	
+	public void speedDown() {	
+		
+	if(speed>0) {
+	speed = speed-10;
+		System.out.println("speed : " + speed);
+		} else {
+			speed=0;
+		}
+	}
+	
+	
+
+
+
+	
+	
+	
+	//getter/setter
+	
+	
+	public String getColor() {
+		return color;
+	}
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+	public int getDoor() {
+		return door;
+	}
+
+
+	public void setDoor(int door) {
+		this.door = door;
+	}
+
+
+	public boolean getAirback() {
+		return airback;
+	}
+
+
+	public void setAirback(boolean airback) {
+		this.airback = airback;
+	}
+
+
+	public boolean isPower() {
+		return power;
+	}
+
+
+	public void setPower(boolean power) {
+		this.power = power;
+	}
+
+
+	public int getSpeed() {
+		return speed;
+	}
+
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
+	
+
+	
+	
+	
+	
+}

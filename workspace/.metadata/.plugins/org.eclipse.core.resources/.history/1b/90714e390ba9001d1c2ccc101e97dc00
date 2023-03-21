@@ -1,0 +1,24 @@
+package day09;
+
+public class CardPackMain {
+
+	public static void main(String[] args) {
+		/*카드 생성*/
+		
+		Card c= new Card(); 
+		c.Print();
+		
+		
+		
+		CardPack cp= new CardPack(); 
+		//c = cp.pick(); //가장위에 있는카드 한장을 pick c객체에 저장
+		Card tmp  = cp.pick(); //임시변수를 만들어서 저장해두됨.
+		tmp.Print();
+		
+		
+			
+		}
+
+	}
+
+	

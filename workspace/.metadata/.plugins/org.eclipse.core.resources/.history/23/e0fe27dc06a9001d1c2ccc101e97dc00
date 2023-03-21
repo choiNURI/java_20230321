@@ -1,0 +1,35 @@
+package day09;
+
+public class cardPack {
+
+	/* CardPack 클래스
+	 * - 카드팩 : 52장의 카드들
+	 * 
+	 * - 카드를 섞는 기능
+	 * - 한장을 선택하는 기능
+	 * - 카드 초기화 기능
+	 * - 출력기능 - Card 클래스에서 가져오기
+	 * - 생성자 - 52장의 카드를 모두 생성
+	 * 
+	 * */
+	
+	//멤버변수
+	//카드를 담을수 있는 배열 52장
+	private Card[] pack = new Card[52];// 카드 팩 배열
+	private int cnt = 0; // 카드가 남은 개수
+	
+	
+	//카드 섞기 기능
+	// 메서드명 : shuffle
+	public void shuffle() {		
+		for(int i = 0 ; i < pack.length ; i++) {
+			int random = (int)(Math.random()*pack.length); 
+			Card tmp = pack[i]; 
+			pack[i] = pack[random]; 
+			pack[random] = tmp;  
+		}		
+	}
+	
+	
+	
+}

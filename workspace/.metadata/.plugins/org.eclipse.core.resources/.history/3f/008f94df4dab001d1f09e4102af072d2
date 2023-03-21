@@ -1,0 +1,16 @@
+package day10;
+
+public class EzenComputerMain {
+
+	public static void main(String[] args) {
+	
+		
+		EzenComputer A = new EzenComputer();
+		A.subjectNumber(3);
+		A.subjectNumber(1);
+		
+		A.subjectArray();
+
+	}
+
+}

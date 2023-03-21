@@ -1,0 +1,14 @@
+package day10;
+
+public class EzenComputerMain {
+
+	public static void main(String[] args) {
+	
+		
+		EzenComputer A = new EzenComputer("키세킁","0618", "비밀!", "1004");
+		A.studentPrint();
+		
+		
+	}
+
+}

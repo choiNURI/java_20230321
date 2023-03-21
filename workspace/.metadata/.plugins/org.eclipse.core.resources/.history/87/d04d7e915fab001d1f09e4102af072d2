@@ -1,0 +1,23 @@
+package day10;
+
+public class EzenComMain {
+
+	public static void main(String[] args) {
+		
+		
+		EzenCom ec = new EzenCom();
+		ec.setName("윤민영");
+		ec.setAge(1);
+		ec.setBirth("2022-02-02");
+		ec.setPhone("1577-3082");
+		ec.setBreanch("UA");
+		ec.printInfo();
+		ec.printCompany();
+		ec.insertCourse("java", "365개월");
+		ec.insertCourse("html", "100개월");
+		ec.insertCourse("DB", "6개월");
+		ec.printCourse();
+
+	}
+
+}

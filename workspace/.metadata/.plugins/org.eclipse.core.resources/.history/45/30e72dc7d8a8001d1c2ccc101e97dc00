@@ -1,0 +1,117 @@
+package day08;
+import java.util.Scanner;
+
+public class 야구게임메서드 {
+	static Scanner scan = new Scanner(System.in);
+	
+	
+	public static void main(String[] args) {
+			
+		int[] com = new int[3];
+		int[] user = new int[3];
+			
+
+		System.out.println("ღゝ◡╹)ノ♡ 야구게임 시작~!♡");
+		randomArr(com);
+		PrintArr(com); //컴퓨터가 결정함.
+		
+		
+		
+		
+		
+			
+			
+	
+		}// 메인의 끝
+				
+
+
+		// 랜덤 숫자 만들기
+	public static int cRandom() {
+		return (int)(Math.random()*9)+1;
+		}
+		
+		// 랜덤 숫자 배열에 저장
+	public static void randomArr(int arr[]) {
+		for(int i=0; i<arr.length; i++) {
+			int r = cRandom();
+			if(!isContain(arr, r)) { 
+				arr[i] = r;  
+			}else { 
+				i--;
+				}	
+			}
+		}
+		
+		// 랜덤 숫자 출력
+	public static void PrintArr(int arr[]) {
+		for(int tmp : arr) {
+			System.out.print(tmp+" ");
+			}
+		}
+		
+		// 중복 확인 하기.
+	public static boolean isContain(int arr[], int random) {
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i] == random) { 
+				
+				return true; 	
+			}
+		}		
+		return false;
+	}
+	
+	
+
+	public static void gameEnd(int com[], int user[]) {
+		
+		int count = 0;
+		int out = 0;
+		int str, ball;
+		
+		while (out!=3 && str!=3) {
+			str = 0;
+			ball = 0; // 다시 올라오면 초기화
+			count++;
+			
+		System.out.println("♡´･ᴗ･`♡ 숫자를 입력 3가지~");
+			for(int i=0; i<user.length; i++) {
+				user[i] = scan.nextInt();
+			}
+			
+			// str과 ball 구하려고 하는거
+		for(int i=0; i<com.length; i++) {
+			for(int j=0; j<user.length; j++) {
+				if(com[i]==user[j]) { // 숫자같은디
+					if (i==j) { // 자리도 같으면~
+						str++;
+					}else {
+						ball++;
+						}
+					}
+			}		
+		}
+	
+		// 결과 출력
+		if(str==0 && ball ==0) {
+			out++;
+			System.out.println(out+"아웃");
+			}
+			System.out.println(str+"스트라이크"+ball+"볼");
+
+			// str 3이네? if문 조건부합 > 프린트, while문 조건 부합 > 게임 종료.
+			if(str==3) {
+			System.out.println(str+"스트라이크! 게임 종료!"+count+"번 만에 성공하셨습니다.");
+					
+			}
+			// out이 3이네? if문 조건부합 > 프린트, while문 조건 부합 > 게임 종료.
+			if(out==3) {
+			System.out.println("게임  끗낫어요 늬 인생도 끗.");
+				}
+		}// while 끝	
+
+	
+	} // 결과 출력 메서드 끝
+} //클래스  끝
+
+
